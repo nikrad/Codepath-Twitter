@@ -1,0 +1,6 @@
+framework module UIView_TKGeometry {
+  umbrella header "UIView+TKGeometry-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module DProperty {
+  umbrella header "DProperty-umbrella.h"
+
+  export *
+  module * { export * }
+}
