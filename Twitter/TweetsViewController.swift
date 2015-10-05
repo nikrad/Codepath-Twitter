@@ -152,12 +152,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     tweets?.insert(newTweet, atIndex: 0)
     tableView.reloadData()
   }
-  
-  func tweetDetailViewController(tweetDetailViewController: TweetDetailViewController, didPostReply replyTweet: Tweet) {
-    print("doing it")
-    tweets?.insert(replyTweet, atIndex: 0)
-    tableView.reloadData()
-  }
 
   // MARK: - Navigation
 

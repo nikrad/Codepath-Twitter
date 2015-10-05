@@ -26,4 +26,14 @@ Time spent: 25 hours
 
 ### Walkthrough
 
-![Video Walkthrough](...)
+![Video Walkthrough](walkthrough.gif)
+
+Credits
+---------
+* [Rotten Tomatoes API](http://developer.rottentomatoes.com/docs/read/JSON)
+* [AFNetworking](https://github.com/AFNetworking/AFNetworking)
+* [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+* [BDBOAuth1Manager](https://github.com/bdbergeron/BDBOAuth1Manager)
+* [DateTools](https://github.com/MatthewYork/DateTools)
+* [CCInfiniteScrolling](https://github.com/ziryanov/CCInfiniteScrolling)
+* GIF created with [LiceCap](http://www.cockos.com/licecap/)

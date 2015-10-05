@@ -106,11 +106,6 @@ class TweetDetailViewController: UIViewController, ComposeViewControllerDelegate
     displayTweet = tweet?.isRetweet == true ? tweet?.retweetSourceTweet : tweet
   }
   
-  func composeViewController(composeViewController: ComposeViewController, didTweet newTweet: Tweet) {
-    print("hit here")
-    dismissViewControllerAnimated(true, completion: nil)
-  }
-
   @IBAction func onReply(sender: AnyObject) {
     let composeVC = storyboard?.instantiateViewControllerWithIdentifier(ComposeViewController.identifier) as! ComposeViewController
     composeVC.delegate = self
@@ -123,9 +118,8 @@ class TweetDetailViewController: UIViewController, ComposeViewControllerDelegate
       // Unretweet
       TwitterClient.sharedInstance.unretweet(tweet!) { (retweet, error) -> () in
         if error == nil {
-          self.tweet!.userHasRetweeted = false
-          self.tweet!.retweetCount = self.tweet!.retweetCount! - 1
-          self.displayTweet = self.tweet
+          self.displayTweet!.userHasRetweeted = false
+          self.displayTweet!.retweetCount = self.tweet!.retweetCount! - 1
         }
       }
     } else {
