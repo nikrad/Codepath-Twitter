@@ -7,5 +7,7 @@ target 'Twitter' do
   pod 'BDBOAuth1Manager'
   pod 'SwiftyJSON'
   pod 'DateTools'
+  pod 'CCInfiniteScrolling'
+  pod 'ImageEffects'
 end
 

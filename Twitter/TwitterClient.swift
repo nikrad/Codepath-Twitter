@@ -104,6 +104,35 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     })
   }
   
+  func mentionsTimelineWithParams(params: NSDictionary?, completion: (tweets: [Tweet]?, error: NSError?) -> ()) {
+    GET("1.1/statuses/mentions_timeline.json", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+      let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
+      completion(tweets: tweets, error: nil)
+      
+      }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+        print("error getting mentions timeline")
+        self.GET("1.1/application/rate_limit_status.json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+          print(JSON(response).rawValue)
+          }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+        })
+        completion(tweets: nil, error: error)
+    })
+  }
+  
+  func userTimelineWithParams(params: NSDictionary?, completion: (tweets: [Tweet]?, error: NSError?) -> ()) {
+    GET("1.1/statuses/user_timeline.json", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+      let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
+      completion(tweets: tweets, error: nil)
+    }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+      print("error getting user timeline")
+      self.GET("1.1/application/rate_limit_status.json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+        print(JSON(response).rawValue)
+        }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+      })
+      completion(tweets: nil, error: error)
+    })
+  }
+  
   func homeTimelineWithParams(params: NSDictionary?, completion: (tweets: [Tweet]?, error: NSError?) -> ()) {
 //    let cachedDataUrl = NSURL(string: "https://gist.githubusercontent.com/nikrad/d0d733f3f2a8f815375a/raw/d3d33ff5997b3ec6b485aa66a4babcbe71273a56/timeline.json")
 //    let request = NSURLRequest(URL: cachedDataUrl!)
@@ -122,8 +151,6 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
 //    task.resume()
 
     GET("1.1/statuses/home_timeline.json", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-//      let json = JSON(response)
-//      print(json.rawValue)
       let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
       completion(tweets: tweets, error: nil)
       
@@ -136,22 +163,6 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
       })
       completion(tweets: nil, error: error)
     })
-    
-//    GET("1.1/statuses/user_timeline.json", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-//      //print("home timeline: \(response)")
-//      let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
-//      for tweet in tweets {
-//        print("text: \(tweet.text), created: \(tweet.createdAt)")
-//      }
-//      completion(tweets: tweets, error: nil)
-//      
-//      }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-//        print("error getting home timeline")
-//        completion(tweets: nil, error: error)
-//    })
-    
-    
-
   }
   
   func loginWithCompletion(completion: (user: User?, error: NSError?) -> ()) {

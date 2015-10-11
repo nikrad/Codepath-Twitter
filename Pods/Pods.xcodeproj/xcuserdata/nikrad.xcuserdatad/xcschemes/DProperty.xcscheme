@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F78BE38D9D32BCAE5DC9AA76"
+               BlueprintIdentifier = "CF9EEB9F8C28646354278059"
                BuildableName = "DProperty.framework"
                BlueprintName = "DProperty"
                ReferencedContainer = "container:Pods.xcodeproj">

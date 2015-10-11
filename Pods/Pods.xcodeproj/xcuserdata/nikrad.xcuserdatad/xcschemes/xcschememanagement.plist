@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ImageEffects.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JRSwizzle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -44,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UIColor-Hex-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UIView+TKGeometry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,12 +62,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09B8B234E43D64614A5090A60780109D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0B8C134E9CF6F3FD4E74E3D4F6BE4C27</key>
+		<key>0CB6208901BCCEAE74A0E509A2944FAF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,17 +72,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8BFC799635855084CFF99FCFBBCCEFF8</key>
+		<key>215F9FB3D56136F2357975769F397A1F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B42C3FCD041D811ECBDEA4D530777BE4</key>
+		<key>52F3C53C3FD33A8CE26E1E6F3741E97F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B53100D0FABC4A95C85047456D1E3ADD</key>
+		<key>6D32A3A7483F43BC80D6CC1C14B7195C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7FF6B0C9A30A06C8EA7919C06F79F0EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ADDFA473ECEDC93A3502EA2B3AC1CF9D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B1878FB658FBF35B0641C6C8A23BF250</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DE851F6473B7F37C45D786269AF764D4</key>
+		<key>CF9957CDF34D0A8C5A54033881F5A871</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E7630B14B8692997C02BF9FFE18ABAB0</key>
+		<key>F2EB043E1C5C2C1990D9EC9B8533CE36</key>
 		<dict>
 			<key>primary</key>
 			<true/>

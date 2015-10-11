@@ -29,8 +29,10 @@ PODS:
     - UIView+TKGeometry
   - DateTools (1.7.0)
   - DProperty (0.0.2)
+  - ImageEffects (1.0.0)
   - JRSwizzle (1.0)
   - SwiftyJSON (2.3.0)
+  - UIColor-Hex-Swift (0.2.0)
   - UIView+TKGeometry (0.2)
 
 DEPENDENCIES:
@@ -38,7 +40,9 @@ DEPENDENCIES:
   - BDBOAuth1Manager
   - CCInfiniteScrolling
   - DateTools
+  - ImageEffects
   - SwiftyJSON
+  - UIColor-Hex-Swift
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
@@ -46,8 +50,10 @@ SPEC CHECKSUMS:
   CCInfiniteScrolling: 90c3eb11449b180fd7ca23f89c2cd5960cbef850
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   DProperty: addcdd8aca31dd02d6dd6082a8862fb3b080d5b1
+  ImageEffects: 6f92f55ae12c4010642f84dcc2d7e21246666cf9
   JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
   SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
+  UIColor-Hex-Swift: a35096d0d3f8630bd647e4df851e1d2a165d5117
   UIView+TKGeometry: bef0d7727753910d66d6fa51a3128ae6908047ef
 
 COCOAPODS: 0.38.2

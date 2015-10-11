@@ -17,23 +17,36 @@ class User: NSObject {
   var name: String?
   var screename: String?
   var profileImageUrl: NSURL?
+  var profileBannerImageUrl: NSURL?
+  var profileColor: String?
   var tagline: String?
   var dictionary: NSDictionary
+  var protected: Bool?
+  var tweetCount: Int?
+  var followingCount: Int?
+  var followersCount: Int?
   
   init(dictionary: NSDictionary) {
     self.dictionary = dictionary
 
-    name = dictionary["name"] as? String
-    screename = dictionary["screen_name"] as? String
-    
+    self.name = dictionary["name"] as? String
+    self.screename = dictionary["screen_name"] as? String
+    self.protected = dictionary["protected"] as? Bool
+    self.tweetCount = dictionary["statuses_count"] as? Int
+    self.followingCount =  dictionary["friends_count"] as? Int
+    self.followersCount =  dictionary["followers_count"] as? Int
+    self.profileColor = dictionary["profile_link_color"] as? String
+    if let profileBanner = dictionary["profile_banner_url"] {
+      self.profileBannerImageUrl = NSURL(string: profileBanner as! String)
+    }
+
     // Get a larger version of the profile image
     var profileImageUrlString = dictionary["profile_image_url"] as! String
     let range = profileImageUrlString.rangeOfString("_normal\\.", options: .RegularExpressionSearch)
     if let range = range {
       profileImageUrlString = profileImageUrlString.stringByReplacingCharactersInRange(range, withString: "_bigger.")
     }
-    profileImageUrl = NSURL(string: (profileImageUrlString))
-    
+    self.profileImageUrl = NSURL(string: profileImageUrlString)
   }
   
   func logout() {

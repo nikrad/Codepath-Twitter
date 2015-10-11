@@ -8,5 +8,7 @@ target 'Twitter' do
   pod 'SwiftyJSON'
   pod 'DateTools'
   pod 'CCInfiniteScrolling'
+  pod 'ImageEffects'
+  pod 'UIColor-Hex-Swift'
 end
 

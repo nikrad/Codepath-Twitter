@@ -57,8 +57,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-Twitter/CCInfiniteScrolling.framework'
   install_framework 'Pods-Twitter/DProperty.framework'
   install_framework 'Pods-Twitter/DateTools.framework'
+  install_framework 'Pods-Twitter/ImageEffects.framework'
   install_framework 'Pods-Twitter/JRSwizzle.framework'
   install_framework 'Pods-Twitter/SwiftyJSON.framework'
+  install_framework 'Pods-Twitter/UIColor_Hex_Swift.framework'
   install_framework 'Pods-Twitter/UIView_TKGeometry.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -67,7 +69,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-Twitter/CCInfiniteScrolling.framework'
   install_framework 'Pods-Twitter/DProperty.framework'
   install_framework 'Pods-Twitter/DateTools.framework'
+  install_framework 'Pods-Twitter/ImageEffects.framework'
   install_framework 'Pods-Twitter/JRSwizzle.framework'
   install_framework 'Pods-Twitter/SwiftyJSON.framework'
+  install_framework 'Pods-Twitter/UIColor_Hex_Swift.framework'
   install_framework 'Pods-Twitter/UIView_TKGeometry.framework'
 fi

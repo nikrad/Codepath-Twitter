@@ -10,7 +10,16 @@ import UIKit
 import AFNetworking
 import DateTools
 
+@objc protocol TweetCellDelegate {
+  optional func tweetCell(tweetCell: TweetCell, didTapReplyButton replyButton: UIButton)
+  optional func tweetCell(tweetCell: TweetCell, didTapReweetButton retweetButton: UIButton)
+  optional func tweetCell(tweetCell: TweetCell, didTapFavoriteButton favoriteButton: UIButton)
+  optional func tweetCell(tweetCell: TweetCell, didTapProfileImageView imageView: UIImageView)
+}
+
 class TweetCell: UITableViewCell {
+  
+  static let identifier = "TweetCell"
   
   @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
@@ -28,6 +37,7 @@ class TweetCell: UITableViewCell {
   @IBOutlet weak var nameLabelTopConstraint: NSLayoutConstraint!
   @IBOutlet weak var profileImageViewTopConstraint: NSLayoutConstraint!
 
+  weak var delegate: TweetCellDelegate?
   var displayTweet: Tweet? {
     didSet {
       createdLabel.text = displayTweet?.createdAt?.shortTimeAgoSinceNow()
@@ -86,7 +96,6 @@ class TweetCell: UITableViewCell {
         favoriteButton.setImage(UIImage(named: "favorite.png"), forState: .Normal)
         favoriteCountLabel.textColor = UIColor.lightGrayColor()
       }
-      
     }
   }
   
@@ -97,12 +106,28 @@ class TweetCell: UITableViewCell {
     profileImageView.layer.cornerRadius = 5
     profileImageView.clipsToBounds = true
     layoutMargins = UIEdgeInsetsZero
+
+    self.replyButton.addTarget(self, action: "onTapReply:", forControlEvents: .TouchUpInside)
+    self.retweetButton.addTarget(self, action: "onTapRetweet:", forControlEvents: .TouchUpInside)
+    self.favoriteButton.addTarget(self, action: "onTapFavorite", forControlEvents: .TouchUpInside)
+    self.profileImageView.userInteractionEnabled = true
+    let tap = UITapGestureRecognizer(target: self, action: "onTapProfileImageView:")
+    self.profileImageView.addGestureRecognizer(tap)
+  }
+  
+  func onTapProfileImageView(sender: UITapGestureRecognizer) {
+    delegate?.tweetCell?(self, didTapProfileImageView: self.profileImageView)
   }
 
-  override func setSelected(selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-
-    // Configure the view for the selected state
+  func onTapReply(sender: UIButton) {
+    delegate?.tweetCell?(self, didTapReplyButton: sender)
   }
-
+  
+  func onTapRetweet(sender: UIButton) {
+    delegate?.tweetCell?(self, didTapReweetButton: sender)
+  }
+  
+  func onTapFavorite(sender: UIButton) {
+    delegate?.tweetCell?(self, didTapFavoriteButton: sender)
+  }
 }

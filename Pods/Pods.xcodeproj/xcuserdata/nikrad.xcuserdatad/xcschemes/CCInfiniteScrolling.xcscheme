@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F835E03678DB26BAC267CCFD"
+               BlueprintIdentifier = "143DF8DE9C1FD382BECCCC28"
                BuildableName = "CCInfiniteScrolling.framework"
                BlueprintName = "CCInfiniteScrolling"
                ReferencedContainer = "container:Pods.xcodeproj">
