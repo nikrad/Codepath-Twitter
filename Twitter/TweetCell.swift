@@ -109,7 +109,7 @@ class TweetCell: UITableViewCell {
 
     self.replyButton.addTarget(self, action: "onTapReply:", forControlEvents: .TouchUpInside)
     self.retweetButton.addTarget(self, action: "onTapRetweet:", forControlEvents: .TouchUpInside)
-    self.favoriteButton.addTarget(self, action: "onTapFavorite", forControlEvents: .TouchUpInside)
+    self.favoriteButton.addTarget(self, action: "onTapFavorite:", forControlEvents: .TouchUpInside)
     self.profileImageView.userInteractionEnabled = true
     let tap = UITapGestureRecognizer(target: self, action: "onTapProfileImageView:")
     self.profileImageView.addGestureRecognizer(tap)
